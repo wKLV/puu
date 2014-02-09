@@ -20,8 +20,9 @@ describe 'puu', ()->
       entity1.add new component2(data: 10)
       entity2.add new component(data: 3)
       entity2.add new component2(data: 6)
-      console.log entity1.components
   describe 'render puu', ->
+    it 'init', ->
+      puu.init_all()
     it '...', ->
-      console.log puu.render_all()
+      puu.render_all()
 

@@ -15,6 +15,7 @@ System = (component)->
     component: component
     render_all: (components) ->
       that.component.render comp for comp in components
+      that.update() if that.update
       return
     render_component: (component)->
       that.component.render component

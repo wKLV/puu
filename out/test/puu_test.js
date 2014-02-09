@@ -34,15 +34,17 @@
         entity2.add(new component({
           data: 3
         }));
-        entity2.add(new component2({
+        return entity2.add(new component2({
           data: 6
         }));
-        return console.log(entity1.components);
       });
     });
     return describe('render puu', function() {
+      it('init', function() {
+        return puu.init_all();
+      });
       return it('...', function() {
-        return console.log(puu.render_all());
+        return puu.render_all();
       });
     });
   });

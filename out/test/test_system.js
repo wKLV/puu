@@ -1,9 +1,11 @@
 (function() {
-  var TestComponent, puu,
+  var TestComponent, f, puu,
     __hasProp = {}.hasOwnProperty,
     __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
   puu = require('../lib/puu');
+
+  f = null;
 
   TestComponent = (function(_super) {
     __extends(TestComponent, _super);
@@ -19,11 +21,15 @@
   })(puu.Component);
 
   TestComponent.render = function(component) {
-    return console.log(component.data.data);
+    return f(component.data.data);
   };
 
   exports.component = TestComponent;
 
   exports.system = puu.System(TestComponent);
+
+  exports.system.init = function(options) {
+    return f = console.log;
+  };
 
 }).call(this);

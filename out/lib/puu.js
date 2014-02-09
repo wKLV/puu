@@ -4,7 +4,7 @@
 puu
 https://github.com/wklv/puu
 
-Copyright (c) 2014 KLV
+Copyright (c) 2014 KLV "Cesar Navarro Estruch"
 Licensed under the MIT license.
  */
 
@@ -21,6 +21,9 @@ Licensed under the MIT license.
         for (_i = 0, _len = components.length; _i < _len; _i++) {
           comp = components[_i];
           that.component.render(comp);
+        }
+        if (that.update) {
+          that.update();
         }
       },
       render_component: function(component) {
